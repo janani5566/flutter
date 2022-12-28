@@ -1,45 +1,62 @@
 import 'package:flutter/material.dart';
 
-void main()
-  {
-    runApp( const MyApp());
-  }
+void main() {
+
+ runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'welcome to the buyp team',
-      home: Scaffold(
-      appBar: AppBar(
-      title: const Text("welcome to buyp team"),
+    return  MaterialApp (
+      title: 'Welcome to Buyp team',
+       home: Scaffold(
+        appBar: AppBar(
+          title: const Text("Welcome to Buyp team"),
       ),
-        body: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-             Container(
-              width: 100,
-              height: 100,
-              color: Colors.pink,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.purple,
-            ),
-            Container(
-              width: 100,
-              height: 100,
-              color: Colors.red,
+        body: Stack(children: [
+          Container(
+            alignment: Alignment.center,
+            color: Colors.redAccent,
+             child: Container(
+              color: Colors.white,
+              width: 400,
+              height: 300,
+              child:  Column(
+                children: [
+                 const  Text("Login"),
+                 TextFormField(),
+                 TextFormField(),
+                 Row(
+                   children: [
+              TextButton (
+                      onPressed: null,
+                      child:  Container(
+                      color: Colors.redAccent,
+                      child:const  Text("Login"),
+               )
+              ),
+               TextButton (
+                  onPressed: null,
+                  child:  Container(
+                  color: Colors.redAccent,
+                  child: const Text("Cancel"),
 
-            )
+                    )
+                    )
+                   ],
+                 ),
+                  ]
+                  ),
+               ),
+        )
+        ]
+        ),
+      ),
 
-            ],
-            ),
-        ),),
-      );
+    );
   }
 }
+
